@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Image Gallery</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <h1>Interactive Image Gallery</h1>
+        <p>CodeAlpha Frontend Development Internship</p>
+    </header>
+
+    <div class="filter-buttons">
+
+        <button class="active" data-filter="all">
+            All
+        </button>
+
+        <button data-filter="nature">
+            Nature
+        </button>
+
+        <button data-filter="cars">
+            Cars
+        </button>
+
+        <button data-filter="animals">
+            Animals
+        </button>
+
+        <button data-filter="technology">
+            Technology
+        </button>
+
+    </div>
+
+    <section class="gallery">
+
+
+        <div class="image nature">
+            <img src="images/nature1.jpg" alt="Nature">
+        </div>
+
+        <div class="image nature">
+            <img src="images/nature2.jpg" alt="Nature">
+        </div>
+
+
+        <div class="image cars">
+            <img src="images/car1.jpg" alt="Car">
+        </div>
+
+        <div class="image cars">
+            <img src="images/car2.jpg" alt="Car">
+        </div>
+
+
+        <div class="image animals">
+            <img src="images/animal1.jpg" alt="Animal">
+        </div>
+
+        <div class="image animals">
+            <img src="images/animal2.jpg" alt="Animal">
+        </div>
+
+
+        <div class="image technology">
+            <img src="images/tech1.jpg" alt="Technology">
+        </div>
+
+        <div class="image technology">
+            <img src="images/tech2.jpg" alt="Technology">
+        </div>
+
+
+        <div class="image nature">
+            <img src="images/nature3.jpg" alt="Nature">
+        </div>
+
+        <div class="image cars">
+            <img src="images/car3.jpg" alt="Car">
+        </div>
+
+        <div class="image animals">
+            <img src="images/animal3.jpg" alt="Animal">
+        </div>
+
+        <div class="image technology">
+            <img src="images/tech3.jpg" alt="Technology">
+        </div>
+
+
+
+       
+
+    </section>
+
+
+    <div class="lightbox">
+
+        <span class="close">&times;</span>
+
+        <button class="prev">
+            <i class="fas fa-angle-left"></i>
+        </button>
+
+        <img class="lightbox-image" src="" alt="">
+
+        <button class="next">
+            <i class="fas fa-angle-right"></i>
+        </button>
+
+    </div>
+
+
+    <footer>
+        <p>© 2026 RAJ Image Gallery | All Rights Reserved   </p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
