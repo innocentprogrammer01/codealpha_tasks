@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="CodeAlpha Task 4 - Modern dark theme music player built with HTML, CSS and JavaScript."
+    >
+
+    <title>NightBeat — Music Player</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app-shell">
+
+        <aside class="sidebar">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    ♫
+                </div>
+
+                <div>
+                    <h1>NightBeat</h1>
+                    <span>Music Player</span>
+                </div>
+
+            </div>
+
+
+            <nav class="nav-menu" aria-label="Main navigation">
+
+                <button
+                    class="nav-item active"
+                    type="button"
+                >
+                    <span>⌂</span>
+                    Home
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    type="button"
+                    id="playlistNav"
+                >
+                    <span>☷</span>
+                    My Playlist
+                </button>
+
+            </nav>
+
+
+            <div class="sidebar-card">
+
+                <div class="mini-icon">
+                    ♫
+                </div>
+
+                <h3>
+                    Enjoy your music
+                </h3>
+
+                <p>
+                    Play your favorite tracks and control
+                    everything from one place.
+                </p>
+
+            </div>
+
+
+            <div class="sidebar-bottom">
+
+                <label
+                    class="upload-button"
+                    for="audioUpload"
+                >
+                    <span>＋</span>
+                    Add Local Songs
+                </label>
+
+                <input
+                    id="audioUpload"
+                    type="file"
+                    accept="audio/*"
+                    multiple
+                    hidden
+                >
+
+                <small>
+                    CodeAlpha • Task 4
+                </small>
+
+            </div>
+
+        </aside>
+
+
+        <main class="main-content">
+
+
+
+            <header class="topbar">
+
+                <div>
+
+                    <p class="eyebrow">
+                        YOUR SOUNDTRACK
+                    </p>
+
+                    <h2>
+                        Good evening,
+                        <span>Music Lover</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="top-actions">
+
+                    <button
+                        class="icon-button"
+                        id="themeHint"
+                        type="button"
+                        aria-label="Dark theme"
+                    >
+                        ◐
+                    </button>
+
+
+                    <div class="avatar">
+                        NB
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <section class="player-grid">
+
+
+                <div class="now-playing-card">
+
+
+                    <div
+                        class="album-art"
+                        id="albumArt"
+                    >
+
+                        <div class="vinyl">
+
+                            <div class="vinyl-center"></div>
+
+                        </div>
+
+                        <div class="art-note">
+                            ♫
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="track-info">
+
+                        <span class="now-label">
+                            NOW PLAYING
+                        </span>
+
+                        <h3 id="songTitle">
+                            Midnight Drive
+                        </h3>
+
+                        <p id="songArtist">
+                            Luna Waves
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="favorite-row">
+
+                        <button
+                            class="heart-button"
+                            id="favoriteBtn"
+                            type="button"
+                            aria-label="Favorite song"
+                        >
+                            ♡
+                        </button>
+
+                        <span id="favoriteText">
+                            Add to favorites
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="progress-section">
+
+                        <input
+                            id="progressBar"
+                            class="progress"
+                            type="range"
+                            min="0"
+                            max="100"
+                            value="0"
+                            step="0.1"
+                            aria-label="Song progress"
+                        >
+
+
+                        <div class="time-row">
+
+                            <span id="currentTime">
+                                0:00
+                            </span>
+
+                            <span id="duration">
+                                0:00
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="controls">
+
+
+                        <button
+                            class="control-button small"
+                            id="shuffleBtn"
+                            type="button"
+                            aria-label="Shuffle"
+                        >
+                            ⤨
+                        </button>
+
+
+                        <button
+                            class="control-button"
+                            id="prevBtn"
+                            type="button"
+                            aria-label="Previous song"
+                        >
+                            ⏮
+                        </button>
+
+
+                        <button
+                            class="play-button"
+                            id="playBtn"
+                            type="button"
+                            aria-label="Play"
+                        >
+                            ▶
+                        </button>
+
+
+                        <button
+                            class="control-button"
+                            id="nextBtn"
+                            type="button"
+                            aria-label="Next song"
+                        >
+                            ⏭
+                        </button>
+
+
+                        <button
+                            class="control-button small"
+                            id="repeatBtn"
+                            type="button"
+                            aria-label="Repeat"
+                        >
+                            ↻
+                        </button>
+
+                    </div>
+
+
+
+                    <div class="volume-row">
+
+                        <span>
+                            🔊
+                        </span>
+
+                        <input
+                            id="volumeBar"
+                            class="volume"
+                            type="range"
+                            min="0"
+                            max="1"
+                            value="0.75"
+                            step="0.01"
+                            aria-label="Volume"
+                        >
+
+                        <span id="volumeValue">
+                            75%
+                        </span>
+
+                    </div>
+
+
+
+                    <audio
+                        id="audioPlayer"
+                        preload="metadata"
+                    ></audio>
+
+                </div>
+
+
+
+                <div
+                    class="playlist-panel"
+                    id="playlistPanel"
+                >
+
+
+                    <div class="playlist-heading">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                YOUR COLLECTION
+                            </span>
+
+                            <h3>
+                                Playlist
+                            </h3>
+
+                        </div>
+
+                        <span
+                            class="track-count"
+                            id="trackCount"
+                        >
+                            3 tracks
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="autoplay-row">
+
+                        <div>
+
+                            <strong>
+                                Autoplay
+                            </strong>
+
+                            <small>
+                                Continue with the next track
+                            </small>
+
+                        </div>
+
+
+                        <label class="switch">
+
+                            <input
+                                id="autoplayToggle"
+                                type="checkbox"
+                                checked
+                            >
+
+                            <span class="slider"></span>
+
+                        </label>
+
+                    </div>
+
+
+
+                    <div
+                        class="playlist"
+                        id="playlist"
+                    >
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <section class="features">
+
+
+                <div class="feature-card">
+
+                    <span class="feature-icon">
+                        ▶
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Easy Controls
+                        </strong>
+
+                        <p>
+                            Play, pause, next and previous.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="feature-card">
+
+                    <span class="feature-icon">
+                        ⌁
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Progress Control
+                        </strong>
+
+                        <p>
+                            Jump anywhere in a track.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="feature-card">
+
+                    <span class="feature-icon">
+                        ♫
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Local Music
+                        </strong>
+
+                        <p>
+                            Add your own audio files.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <footer>
+
+                <span>
+                    Built with HTML • CSS • JavaScript
+                </span>
+
+                <span>
+                    CodeAlpha Internship — Task 4
+                </span>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
